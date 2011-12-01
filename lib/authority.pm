@@ -1,26 +1,27 @@
 package authority;
 
-use 5.005;
+use 5.006;
 use strict;
-use UNIVERSAL::AUTHORITY 0.001 qw[];
 
 BEGIN {
 	$authority::AUTHORITY = 'cpan:TOBYINK';
-	$authority::VERSION   = '0.001';
+	$authority::VERSION   = '0.002';
 }
 
 use Carp 1.0 qw[];
 use File::Spec 0.6 qw[];
-use Scalar::Util 0 qw[blessed refaddr];
+use Object::AUTHORITY 0 qw[];
 
 sub import
 {
+	use UNIVERSAL::AUTHORITY::Lexical;
+	
 	my ($class, $authority, $module, @arguments) = @_;
 	($module, my $version) = split /\s+/, $module, 2;
 	Carp::croak("Wrong number of arguments") unless defined $authority;
-
+	
 	(my $file = "$module.pm") =~ s!::!/!g;
-
+	
 	if ($authority =~ /^any$/i)
 	{
 		require $file;
@@ -108,9 +109,21 @@ L<http://rt.cpan.org/Dist/Display.html?Queue=authority>.
 
 =head1 SEE ALSO
 
-L<UNIVERSAL::AUTHORITY>,
-L<authority::shared>,
-L<http://feather.perl6.nl/syn/S11.html>,
+=over
+
+=item * L<Object::AUTHORITY> - an AUTHORITY method for your class
+
+=item * L<authority::shared> - a more sophisticated AUTHORITY method for your class
+
+=item * L<UNIVERSAL::AUTHORITY> - an AUTHORITY method for every class (deprecated)
+
+=item * L<UNIVERSAL::AUTHORITY::Lexical> - an AUTHORITY method for every class, within a lexical scope
+
+=item * I<authority> (this module) - load modules only if they have a particular authority
+
+=back
+
+Background reading: L<http://feather.perl6.nl/syn/S11.html>,
 L<http://www.perlmonks.org/?node_id=694377>.
 
 =head1 AUTHOR
