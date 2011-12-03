@@ -5,7 +5,7 @@ use strict;
 
 BEGIN {
 	$authority::AUTHORITY = 'cpan:TOBYINK';
-	$authority::VERSION   = '0.002';
+	$authority::VERSION   = '0.003';
 }
 
 use Carp 1.0 qw[];

@@ -26,3 +26,14 @@ dist:v_0-002
 		dcs:item   [ rdfs:label "Don't use UNIVERSAL::AUTHORITY"@en ] ;
 		dcs:item   [ rdfs:label "use UNIVERSAL::AUTHORITY::Lexical"@en ] ;
 		].
+
+dist:project :release dist:v_0-003 .
+dist:v_0-003
+	a               :Version ;
+	dc:issued       "2011-12-03"^^xsd:date ;
+	:revision       "0.003"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/authority-0.003.tar.gz> ;
+	dcs:changeset [
+		dcs:versus dist:v_0-002 ;
+		dcs:item   [ rdfs:label "Upgrade Module::Package::RDF."@en ; a dcs:Packaging , dcs:Bugfix ] ;
+		].
