@@ -37,3 +37,15 @@ dist:v_0-003
 		dcs:versus dist:v_0-002 ;
 		dcs:item   [ rdfs:label "Upgrade Module::Package::RDF."@en ; a dcs:Packaging , dcs:Bugfix ] ;
 		].
+
+dist:project :release dist:v_0-004 .
+dist:v_0-004
+	a               :Version ;
+	dc:issued       "2011-12-04"^^xsd:date ;
+	:revision       "0.004"^^xsd:string ;
+	:file-release   <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/authority-0.004.tar.gz> ;
+	dcs:changeset [
+		dcs:versus dist:v_0-003 ;
+		dcs:item   [ rdfs:label "Note dependency on UNIVERSAL::AUTHORITY::Lexical."@en ; a dcs:Packaging , dcs:Bugfix ] ;
+		dcs:item   [ rdfs:label "Note dependency on Object::AUTHORITY."@en ; a dcs:Packaging , dcs:Bugfix ]
+		].
