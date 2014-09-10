@@ -1,0 +1,11 @@
+@prefix deps:  <http://ontologi.es/doap-deps#> .
+
+<http://purl.org/NET/cpan-uri/dist/authority/project>
+	deps:runtime-requirement         [ deps:on "Object::AUTHORITY"^^deps:CpanId ];
+	deps:runtime-requirement         [
+		deps:on "UNIVERSAL::AUTHORITY::Lexical"^^deps:CpanId;
+	];
+	deps:runtime-requirement         [ deps:on "File::Spec 0.6"^^deps:CpanId ];
+	deps:runtime-requirement         [ deps:on "Carp 1.0"^^deps:CpanId ];
+	deps:test-requirement            [ deps:on "Test::More 0.61"^^deps:CpanId ].
+
